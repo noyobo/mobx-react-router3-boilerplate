@@ -4,6 +4,7 @@ class AppState {
   @observable timer = 0;
 
   constructor() {
+    this.timer = 0;
     setInterval(() => {
       this.timer += 1;
     }, 1000);

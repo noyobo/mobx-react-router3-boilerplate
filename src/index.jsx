@@ -4,13 +4,11 @@ import { Provider } from 'mobx-react';
 import { render } from 'react-dom';
 import AppState from './AppState';
 
+const appState = new AppState();
+
 import Main from './components/Main';
 import BlueCounter from './components/BlueCounter';
 import RedCounter from './components/RedCounter';
-
-
-// const appState = new AppState(window.__INITIAL_STATE__);
-const appState = new AppState();
 
 render(
     <Provider appState={ appState }>
