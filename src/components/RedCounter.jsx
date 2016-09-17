@@ -9,14 +9,14 @@ class App extends Component {
         <h3>Red Counter</h3>
         <hr />
         <button onClick={this.onReset}>
-          Red Button - Seconds passed: {this.props.appState.timer}
+          counter value: {this.props.appState.count} - Reset ?
         </button>
       </div>
     );
   }
 
   onReset = () => {
-    this.props.appState.resetTimer();
+    this.props.appState.reset();
   }
 };
 

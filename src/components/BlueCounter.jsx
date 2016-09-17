@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
+
 @observer(['appState'])
 class App extends Component {
   render() {
@@ -8,15 +9,26 @@ class App extends Component {
       <div style={{backgroundColor: '#ababff'}}>
         <h3>Blue Counter</h3>
         <hr />
-        <button onClick={this.onReset}>
-          Blue Button - Seconds passed: {this.props.appState.timer}
-        </button>
+        Value: {this.props.appState.count}
+        <br/>
+        <button onClick={this.handleIncrement}>+</button>
+        <button onClick={this.handleReset}>Reset</button>
+        <button onClick={this.handleDecrement}>-</button>
+        
       </div>
     );
   }
 
-  onReset = () => {
-    this.props.appState.resetTimer();
+  handleReset = () => {
+    this.props.appState.reset();
+  }
+
+  handleIncrement = () => {
+    this.props.appState.increment();
+  }
+
+  handleDecrement = () => {
+    this.props.appState.decrement();
   }
 };
 
