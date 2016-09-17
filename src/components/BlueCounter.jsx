@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
 
-@observer
+// @observer
+@observer(['appState'])
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{backgroundColor: '#ababff'}}>
+        <h3>Blue Counter</h3>
+        <hr />
         <button onClick={this.onReset}>
-          Seconds passed: {this.props.appState.timer}
+          Blue Button - Seconds passed: {this.props.appState.timer}
         </button>
-        <DevTools />
       </div>
     );
   }
