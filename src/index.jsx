@@ -12,11 +12,11 @@ import RedCounter from './components/RedCounter';
 
 //// Option one: not working
 import AppState from './AppState';
-const  appState = new AppState();
+const appState = new AppState();
 
 
 //// Option Two: works
-// import appState from './SecondAppState';
+// import appState from './AppState2';
 
 
 

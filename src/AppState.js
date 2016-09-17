@@ -3,6 +3,10 @@ import { observable, action } from 'mobx';
 export default  class AppState {
   @observable count = 0;
 
+  constructor(){
+    this.count = 0;
+  }
+
   @action increment() {
     this.count++;
   }
