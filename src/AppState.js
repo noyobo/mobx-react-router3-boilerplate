@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 
-export default  class AppState {
+export default class AppState {
   @observable count = 0;
 
   constructor(){
