@@ -1,7 +1,7 @@
 mobx-react-router-boilerplate
 =============================
 
-A minimal application that combines [MobX](https://mobxjs.github.io/mobx) with [React](https://facebook.github.io/react) abd [React-Router](https://github.com/ReactTraining/react-router) Originally cloned from [mobx-react-boilerplate]
+A minimal application that combines [MobX](https://mobxjs.github.io/mobx) with [React](https://facebook.github.io/react) abd [React-Router](https://github.com/ReactTraining/react-router) Originally cloned from [mobx-react-boilerplate](https://github.com/mobxjs/mobx-react-boilerplate)
 
 ### What is in here ?
 This boilerplate shows how to use the react-router with mobx.
