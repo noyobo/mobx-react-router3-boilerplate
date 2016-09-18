@@ -1,9 +1,23 @@
-mobx-react-boilerplate
-=====================
+mobx-react-router-boilerplate
+=============================
 
-A minimal application that combines [MobX](https://mobxjs.github.io/mobx) with [React](https://facebook.github.io/react) abd [React-Router](https://github.com/ReactTraining/react-router). Supports ES6 and JSX compilation through babel.
+A minimal application that combines [MobX](https://mobxjs.github.io/mobx) with [React](https://facebook.github.io/react) abd [React-Router](https://github.com/ReactTraining/react-router) Originally cloned from [mobx-react-boilerplate]
 
-* For a more sophisticated project to start with, see the full TodoMVC implementation: [mobx-react-todomvc](https://github.com/mobxjs/mobx-react-todomvc).
+### What is in here ?
+This boilerplate shows how to use the react-router with mobx.
+We have two components, the BlueCounter and the RedCounter. Both  shows the same observable 'count' value from the a mobx 'AppState'
+
+Two routes are setup for displaying each counter, and Provider from mobx-react is used here:
+```
+    <Provider appState={ appState }>
+      <Router history={ browserHistory }>
+        <Route path='/' component={ Main }>
+          <Route path='counter1' component={ BlueCounter } />
+          <Route path='counter2' component={ RedCounter } />
+        </Route>
+      </Router>
+    </Provider>
+```
 
 ### Run the example
 
@@ -12,8 +26,3 @@ npm install
 npm start
 open http://localhost:3002
 ```
-
-
-### Credits
-
-* [Mendix](http://github.com/mendix) for providing the opportunity to battle test this approach (we're hiring!).
