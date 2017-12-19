@@ -3,28 +3,52 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://192.168.33.10:3002',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+  entry: ['babel-polyfill', './src/index'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/dist/'
   },
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: 'babel-loader',
+        include: path.join(__dirname, 'src')
+      }
+    ]
+  },
+  stats: {
+    colors: true,
+    modules: false,
+    chunkModules: false,
+    chunks: false
+  },
+  devServer: {
+    contentBase: './public',
+    hot: true,
+    stats: {
+      colors: true,
+      modules: false,
+      chunkModules: false,
+      chunks: false
+    },
+    proxy: {
+      '/**': {
+        bypass: function(req, res, opt) {
+          if (/\/(dist)/.test(req.path)) {
+            return req.path;
+          }
+          return '/';
+        }
+      }
+    }
   }
 };

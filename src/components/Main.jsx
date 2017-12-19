@@ -8,7 +8,8 @@ class Main extends Component {
       <div>
         <h2>Mobx-React-Router</h2>
         <hr />
-        <Link to="/counter1">counter1</Link> | <Link to="/counter2">counter2</Link>
+        <Link to="/counter1">counter1</Link>--|--
+        <Link to="/counter2">counter2</Link>
         <hr />
         {this.props.children}
         <DevTools />

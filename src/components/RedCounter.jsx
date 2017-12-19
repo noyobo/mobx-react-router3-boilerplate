@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
-@observer(['appState'])
+@inject('appState')
+@observer
 class App extends Component {
   render() {
     return (
-      <div style={{backgroundColor: '#ffabab'}}>
+      <div style={{ backgroundColor: '#ffabab' }}>
         <h3>Red Counter</h3>
         <hr />
         <button onClick={this.onReset}>
@@ -17,7 +18,7 @@ class App extends Component {
 
   onReset = () => {
     this.props.appState.reset();
-  }
-};
+  };
+}
 
 export default App;
